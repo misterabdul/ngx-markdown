@@ -1,6 +1,6 @@
 {
-  "name": "ngx-markdown",
-  "version": "12.0.1",
+  "name": "@misterabdul/ngx-markdown",
+  "version": "12.0.1-custom",
   "description": "Angular library that uses marked to parse markdown to html combined with Prism.js for synthax highlights",
   "homepage": "https://github.com/jfcere/ngx-markdown",
   "license": "MIT",
@@ -8,9 +8,15 @@
     "name": "Jean-Francois Cere",
     "email": "jfcere@hotmail.com"
   },
+  "contributors": [
+    {
+      "name": "Abdul Pasaribu",
+      "email": "abdoelrachmad@gmail.com"
+    }
+  ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/jfcere/ngx-markdown"
+    "url": "https://github.com/misterabdul/ngx-markdown"
   },
   "keywords": [
     "angular",
