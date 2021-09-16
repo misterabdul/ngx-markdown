@@ -16,6 +16,8 @@ export class MarkdownComponent implements OnChanges, AfterViewInit {
   protected static ngAcceptInputType_lineHighlight: boolean | '';
   protected static ngAcceptInputType_lineNumbers: boolean | '';
 
+  private _innerMarkdown: string | undefined;
+
   @Input() data: string | undefined;
   @Input() src: string | undefined;
 
@@ -71,10 +73,12 @@ export class MarkdownComponent implements OnChanges, AfterViewInit {
       this.handleSrc();
       return;
     }
+    this.handleTransclusion();
   }
 
   ngAfterViewInit(): void {
     if (!this.data && !this.src) {
+      this._innerMarkdown = this.element.nativeElement.innerHTML;
       this.handleTransclusion();
     }
 
@@ -113,7 +117,7 @@ export class MarkdownComponent implements OnChanges, AfterViewInit {
   }
 
   private handleTransclusion(): void {
-    this.render(this.element.nativeElement.innerHTML, true);
+    this.render(this._innerMarkdown!, true);
   }
 
   private handlePlugins(): void {
