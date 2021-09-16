@@ -112,7 +112,7 @@ describe('MarkdowService', () => {
 
       it('should request reload fn', () => {
 
-        markdownService._trigger$.subscribe(res => {
+        markdownService.trigger.subscribe(res => {
           expect(res).toBe(1);
         });
 

@@ -33,7 +33,9 @@ export const SECURITY_CONTEXT = new InjectionToken<SecurityContext>('SECURITY_CO
 @Injectable()
 export class MarkdownService {
 
-  _trigger$ = new Subject();
+  private _trigger$ = new Subject();
+
+  get trigger(): Subject<unknown> { return this._trigger$; }
 
   private readonly initialMarkedOptions: MarkedOptions = {
     renderer: new MarkedRenderer(),

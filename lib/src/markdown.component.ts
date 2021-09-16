@@ -78,7 +78,7 @@ export class MarkdownComponent implements OnChanges, AfterViewInit {
       this.handleTransclusion();
     }
 
-    this.markdownService._trigger$.subscribe(() => {
+    this.markdownService.trigger.subscribe(() => {
       this.loadContent();
     });
   }
